@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="NativeInFeed"
+           tests="7"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="619.851">
+  <properties />
+  
+  
+            <testcase name="Test_InFeedElements" time="83.929" classname="TemplateResponseTypeTestRelated.NativeTestRelated.NativeInlineResponseTest" />
+                <testcase name="Test_InFeedElements" time="86.803" classname="TemplateResponseTypeTestRelated.NativeTestRelated.NativeInlineResponseTest" />
+                <testcase name="Test_InFeedElements" time="83.137" classname="TemplateResponseTypeTestRelated.NativeTestRelated.NativeInlineResponseTest" />
+                <testcase name="Test_InFeedElements" time="84.155" classname="TemplateResponseTypeTestRelated.NativeTestRelated.NativeInlineResponseTest" />
+                <testcase name="Test_InFeedElements" time="82.356" classname="TemplateResponseTypeTestRelated.NativeTestRelated.NativeInlineResponseTest" />
+                <testcase name="Test_InFeedElements" time="96.229" classname="TemplateResponseTypeTestRelated.NativeTestRelated.NativeInlineResponseTest" />
+                <testcase name="Test_InFeedElements" time="103.242" classname="TemplateResponseTypeTestRelated.NativeTestRelated.NativeInlineResponseTest" />
+      
+</testsuite>

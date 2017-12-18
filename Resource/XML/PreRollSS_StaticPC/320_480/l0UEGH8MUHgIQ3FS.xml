@@ -1,0 +1,3334 @@
+<?xml version="1.0" encoding="UTF-8"?><Application defaultLang="en-us" generator="InMobiStudio" version="1.7">
+  <uniqueID>l0UEGH8MUHgIQ3FS</uniqueID>
+  <created>2015-12-03T09:08:36Z</created>
+  <lastModified>2016-09-30T11:17:53</lastModified>
+  <adFormat>interstitial</adFormat>
+  <title>
+    <entry lang="en-us">[AdChoices] PreRoll_SS_320x480</entry>
+  </title>
+  <rulers visible="false"/>
+  <smartGuides visible="false"/>
+  <orientation>portrait</orientation>
+  <applicationWidth>320</applicationWidth>
+  <applicationHeight>480</applicationHeight>
+  <isAutoscale>true</isAutoscale>
+  <pages>
+    <Page hideForegroundMaster="true">
+      <uniqueID>Page1</uniqueID>
+      <created>2015-12-03T09:08:36Z</created>
+      <lastModified>2015-12-03T09:08:36Z</lastModified>
+      <name>video</name>
+      <elements>
+        <element>
+          <name>video</name>
+          <uniqueID>Element:23423dd1</uniqueID>
+          <class>component</class>
+          <source version="7">com.sproutbuilder.components.video.VideoComponent</source>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>0</ty>
+              <width>320</width>
+              <height>480</height>
+              <minimumWidth>22</minimumWidth>
+              <minimumHeight>20</minimumHeight>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#000000</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>SOLID</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="condition" trigger="mouseClick">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="elementProperty">video.x</variable>
+                  <operator>eq</operator>
+                  <value>playing</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">pause</value>
+                </parameter>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mouseClick">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="elementProperty">video.x</variable>
+                  <operator>eq</operator>
+                  <value>paused</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">play</value>
+                </parameter>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaCompleted">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="string">{xvar:autoCloseAd}</variable>
+                  <operator>eq</operator>
+                  <value>true</value>
+                </condition>
+                <condition>
+                  <variable type="string">{xvar:closeDuration}</variable>
+                  <operator>eq</operator>
+                  <value>0</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="closeSprout" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>closeAll</name>
+                  <value type="string">false</value>
+                </parameter>
+                <parameter>
+                  <name>sproutID</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaCompleted">
+              <conditions actionCount="1" allRequired="false" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>preRollSkip</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>preRollNonSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeHP, cta, ctaText, replay, closeButton1</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaCompleted">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="string">{xvar:autoCloseAd}</variable>
+                  <operator>eq</operator>
+                  <value>true</value>
+                </condition>
+                <condition>
+                  <variable type="string">{xvar:closeDuration}</variable>
+                  <operator>gt</operator>
+                  <value>0</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="controlTimer" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">closeadTimer</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">start</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaCompleted">
+              <conditions actionCount="2" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="externalvar">showAdChoices</variable>
+                  <operator>contains</operator>
+                  <value>true</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>preRollSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">DAAIconVP, DAAhotspotVP</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="setProperty" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeHP, closeButton1</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaCompleted">
+              <conditions actionCount="2" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="externalvar">showAdChoices</variable>
+                  <operator>contains</operator>
+                  <value>true</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>preRollNonSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">DAAIconVP, DAAhotspotVP</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="setProperty" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeHP, closeButton1</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaCompleted">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="string">{xvar:type}</variable>
+                  <operator>noteq</operator>
+                  <value>preRollSkip</value>
+                </condition>
+                <condition>
+                  <variable type="string">{xvar:type}</variable>
+                  <operator>noteq</operator>
+                  <value>preRollNonSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="gotoPage" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">sp:_NEXTPAGE</value>
+                </parameter>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaCompleted">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="externalvar">country</variable>
+                  <operator>eq</operator>
+                  <value>cn</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaCompleted">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeHP, closeButton1</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="condition" trigger="mediaQ1Complete">
+              <conditions actionCount="1" allRequired="false" playActions="true" stopActions="true">
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>preRollSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="false" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeButton1, closeHP, cta, ctaText, leftClose</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="condition" trigger="mediaQ1Complete">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="true">
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>staticEndCardSkip</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">showClose</variable>
+                  <operator>eq</operator>
+                  <value>true</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="false" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeButton1, closeHP</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="condition" trigger="mediaQ1Complete">
+              <conditions actionCount="1" allRequired="false" playActions="true" stopActions="true">
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>staticEndCardSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="false" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">skip</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">skip1</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="string">&lt;span style='font-family: Helvetica, Arial, Roboto, "Droid Sans Fallback", sans-serif;font-size: 12px;text-decoration: underline; color: #FFF;'&gt;跳过 广告&lt;/span&gt;&lt;span style='font-family: Helvetica, Arial, Roboto, "Droid Sans Fallback", sans-serif;font-size: 12px; text-decoration: none; color: #FFF;'&gt; &amp;#10005;&lt;/span&gt;</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">SkipAdCn</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">text</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaQ1Complete">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="true">
+                <condition>
+                  <variable type="externalvar">country</variable>
+                  <operator>noteq</operator>
+                  <value>cn</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>preRollSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeButton1, closeHP, cta, ctaText, leftClose</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaQ1Complete">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="true">
+                <condition>
+                  <variable type="externalvar">country</variable>
+                  <operator>noteq</operator>
+                  <value>cn</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>staticEndCardSkip</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">showClose</variable>
+                  <operator>contains</operator>
+                  <value>true</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">leftClose, closeButton1, closeHP</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaQ1Complete">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="true">
+                <condition>
+                  <variable type="externalvar">country</variable>
+                  <operator>noteq</operator>
+                  <value>cn</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>contains</operator>
+                  <value>staticEndCardSkip</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">showClose</variable>
+                  <operator>contains</operator>
+                  <value>false</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">skip1</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mediaQ1Complete">
+              <conditions actionCount="1" allRequired="true" playActions="true" stopActions="true">
+                <condition>
+                  <variable type="externalvar">country</variable>
+                  <operator>contains</operator>
+                  <value>cn</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="setProperty" trigger="mediaQ1Complete">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">skipCn, SkipAdCn, SkipAdCnX</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <componentProperties>
+            <property name="video">
+              <value title="Variable {xvar:video_url}" url="{xvar:video_url}"/>
+            </property>
+            <property name="autoplay" value="true"/>
+            <property name="muted" value="false"/>
+            <property name="endaction" value="stop"/>
+            <property name="systemaudio" value="nothing"/>
+            <property name="displayAspectRatioConfig" value="keepaspect"/>
+            <property name="controls" value="overhide"/>
+            <property name="enableReplay" value="false"/>
+            <property name="playimage" value=""/>
+            <property name="buttons" value="show"/>
+            <property name="displaytimes" value="elapsedtotal"/>
+            <property name="fullscreen" value="disable"/>
+            <property name="barcolor" value="0xb7b7b7"/>
+            <property name="iconcolor" value="0"/>
+            <property name="builderCornerRadii" value="0,0,0,0"/>
+            <property name="builderBorderColor" value="0x000000"/>
+            <property name="builderBorderWidth" value="0"/>
+            <property name="builderBorderType" value="NONE"/>
+            <property name="builderFillColor" value="0x000000"/>
+            <property name="builderGradientColor" value="0xcecece"/>
+            <property name="builderFillType" value="SOLID"/>
+          </componentProperties>
+        </element>
+        <element>
+          <name>rewardedComponent</name>
+          <uniqueID>Element:346ca8e3</uniqueID>
+          <class>component</class>
+          <source version="1">com.sproutbuilder.components.html.HTMLComponent</source>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>-113</tx>
+              <ty>0</ty>
+              <width>78</width>
+              <height>50</height>
+              <minimumWidth>10</minimumWidth>
+              <minimumHeight>10</minimumHeight>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>SOLID</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>1</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <componentProperties>
+            <property name="video" value="video"/>
+            <property name="enabled" value="{xvar:isRewarded}"/>
+            <property name="incentiveJson" value="{xvar:_incentCBJson}"/>
+            <property name="internal_component_class" value="sprout.custom.RewardCallbackComponent"/>
+            <property name="internal_component_source" value="https://i.l.inmobicdn.net/studio/asset/b688c347-cae7-45ca-a883-3e1814076d70.xml"/>
+          </componentProperties>
+        </element>
+        <element>
+          <name>replay</name>
+          <uniqueID>Element:46513e1b</uniqueID>
+          <class>image</class>
+          <source title="a3683139-ed8b-4aed-919a-48936a45e309">https://studio.inmobicdn.net/asset/13b32147-9ed1-4bea-b69a-7e4a654443e9.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>130</tx>
+              <ty>200</ty>
+              <width>78</width>
+              <height>78</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">play</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeButton1, closeHP, cta, ctaText, replay</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="reportEventTracking" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>category</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>action</name>
+                  <value type="string">Video Replayed</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>label</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="controlTimer" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">closeadTimer</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">stop</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">closeadTimer</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="string">{xvar:closeDuration}</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">evaluate</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">duration</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettings, AdSettingsVP</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="number">326</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">x</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettingHotspot, AdSettingHotspotVP, skip1, skipCn, DAAIcon, DAAIconVP, DAAhotspot, DAAhotspotVP, SkipAdCn, SkipAdCnX</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>videoReplay:videoReplay;</customCss>
+        </element>
+        <element>
+          <name>cta</name>
+          <uniqueID>Element:a73748d</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>75</tx>
+              <ty>432</ty>
+              <width>175</width>
+              <height>28</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#000000</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>SOLID</fillType>
+            <opacity>0.3</opacity>
+            <visibility>false</visibility>
+            <borderWidth>1</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <customCss>border-radius: 6px;</customCss>
+        </element>
+        <element>
+          <name>cta</name>
+          <uniqueID>Element:2c2eefe7</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>75</tx>
+              <ty>432</ty>
+              <width>175</width>
+              <height>28</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#ffffff</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>1</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <customCss>border-radius: 6px;</customCss>
+        </element>
+        <element>
+          <name>ctaText</name>
+          <uniqueID>Text:d2a02f03</uniqueID>
+          <class>text</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>79</tx>
+              <ty>437</ty>
+              <width>168</width>
+              <height>20</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <customCss>text-shadow: 1px 1px #000000</customCss>
+          <text scroll="off">
+            <entry lang="en-us">&lt;P _LH="15.1" ALIGN="CENTER"&gt;&lt;FONT FACE="HelveticaNeue" SIZE="13" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="1"&gt;{var:ctatext}&lt;/FONT&gt;&lt;/P&gt;</entry>
+          </text>
+        </element>
+        <element>
+          <name>cta</name>
+          <uniqueID>Element:b198e767</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>74</tx>
+              <ty>426</ty>
+              <width>179</width>
+              <height>39</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="false" id="gotoURL" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>url</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>targetWindow</name>
+                  <value type="string">_top</value>
+                </parameter>
+                <parameter>
+                  <name>label</name>
+                  <value type="string">click</value>
+                </parameter>
+                <parameter>
+                  <name>gotoURLVia</name>
+                  <value type="string">clickMacro</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">sp:_NEXTPAGE</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">pause</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="gotoURL" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>url</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>targetWindow</name>
+                  <value type="string">_blank</value>
+                </parameter>
+                <parameter>
+                  <name>label</name>
+                  <value type="string">click</value>
+                </parameter>
+                <parameter>
+                  <name>gotoURLVia</name>
+                  <value type="string">clickMacro</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="callJavaScript" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>code</name>
+                  <value type="string">mraid.close();</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>videoCTA:videoCTA;</customCss>
+        </element>
+        <element>
+          <uniqueID>Text:7a61969f</uniqueID>
+          <class>text</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>100</tx>
+              <ty>-34</ty>
+              <width>198</width>
+              <height>20</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <customCss>text-shadow: 1px 1px #000000</customCss>
+          <text scroll="off">
+            <entry lang="en-us">&lt;P _LH="15.45" ALIGN="RIGHT"&gt;&lt;FONT FACE="HelveticaNeue" SIZE="13" COLOR="#FF0000" LETTERSPACING="0" KERNING="1"&gt;&lt;B&gt;TYPE {xvar:type},{var:play&lt;/B&gt;}&lt;/FONT&gt;&lt;/P&gt;</entry>
+          </text>
+        </element>
+        <element>
+          <uniqueID>Text:7649ff3b</uniqueID>
+          <class>text</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>117</tx>
+              <ty>5</ty>
+              <width>198</width>
+              <height>35</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <customCss>text-shadow: 1px 1px #000000</customCss>
+          <text scroll="off" selectable="false">
+            <entry lang="en-us">&lt;P _LH="15.1" ALIGN="RIGHT"&gt;&lt;FONT FACE="HelveticaNeue" SIZE="13" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="1"&gt;{var:brandname}&lt;/FONT&gt;&lt;/P&gt;</entry>
+          </text>
+        </element>
+        <element>
+          <name>leftClose</name>
+          <uniqueID>Element:43296a85</uniqueID>
+          <class>image</class>
+          <source title="Add Assets">https://studio.inmobicdn.net/asset/a3b3426b-21c5-4d5a-b39a-c5cb9cdfa1fb.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>0</ty>
+              <width>30</width>
+              <height>30</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="closeSprout" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>sproutID</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>closeAll</name>
+                  <value type="string">false</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+        </element>
+        <element>
+          <name>skip</name>
+          <uniqueID>Text:6018243b</uniqueID>
+          <class>text</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>438</ty>
+              <width>33</width>
+              <height>25</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">stop</value>
+                </parameter>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">videoelement1</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">sp:_NEXTPAGE</value>
+                </parameter>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>text-shadow: 1px 1px #000000</customCss>
+          <text scroll="off" selectable="false">
+            <entry lang="en-us">&lt;P _LH="10.450000000000001" ALIGN="CENTER"&gt;&lt;FONT FACE="HelveticaNeue" SIZE="9" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="1"&gt;{var:skipText}&lt;/FONT&gt;&lt;/P&gt;</entry>
+          </text>
+        </element>
+        <element>
+          <name>closeButton1</name>
+          <uniqueID>Element:464fbca7</uniqueID>
+          <class>image</class>
+          <source title="Add Assets">https://studio.inmobicdn.net/asset/a3b3426b-21c5-4d5a-b39a-c5cb9cdfa1fb.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>0</ty>
+              <width>30</width>
+              <height>30</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="closeSprout" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>sproutID</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>closeAll</name>
+                  <value type="string">false</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+        </element>
+        <element>
+          <name>closeHP</name>
+          <uniqueID>Element:e697daaf</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>0</ty>
+              <width>71</width>
+              <height>38</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="closeSprout" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>closeAll</name>
+                  <value type="string">false</value>
+                </parameter>
+                <parameter>
+                  <name>sproutID</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>videoClose:videoClose;</customCss>
+        </element>
+        <element>
+          <name>skip</name>
+          <uniqueID>Element:c16b0b9</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>-8</tx>
+              <ty>430</ty>
+              <width>75</width>
+              <height>30</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">stop</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">skip</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">Page:2f5eb993</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mouseClick">
+              <conditions actionCount="2" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="string">{xvar:autoCloseAd}</variable>
+                  <operator>eq</operator>
+                  <value>true</value>
+                </condition>
+                <condition>
+                  <variable type="string">{xvar:closeDuration}</variable>
+                  <operator>gt</operator>
+                  <value>0</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="controlTimer" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">start</value>
+                </parameter>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">closeadTimer</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+        </element>
+        <element>
+          <uniqueID>Element:baf5c92d</uniqueID>
+          <class>component</class>
+          <source version="1">com.sproutbuilder.components.html.HTMLComponent</source>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>-163</tx>
+              <ty>99</ty>
+              <width>78</width>
+              <height>50</height>
+              <minimumWidth>1</minimumWidth>
+              <minimumHeight>1</minimumHeight>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>SOLID</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>1</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <componentProperties>
+            <property name="video" value="video"/>
+            <property name="internal_component_class" value="sprout.custom.StallVideoComponent"/>
+            <property name="internal_component_source" value="https://i.l.inmobicdn.net/studio/asset/ae9ebb2a-81f7-479a-9360-125717bd31d9.xml"/>
+          </componentProperties>
+        </element>
+        <element>
+          <uniqueID>Element:7beedc9d</uniqueID>
+          <class>component</class>
+          <source version="1">com.sproutbuilder.components.html.HTMLComponent</source>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>-164</tx>
+              <ty>175</ty>
+              <width>78</width>
+              <height>50</height>
+              <minimumWidth>10</minimumWidth>
+              <minimumHeight>10</minimumHeight>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>SOLID</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>1</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <componentProperties>
+            <property name="video" value="video"/>
+            <property name="internal_component_class" value="sprout.custom.VideoEventsComponent"/>
+            <property name="internal_component_source" value="https://i.l.inmobicdn.net/studio/asset/4022fa8e-b78b-49ff-a338-16fd08ddb5f7.xml"/>
+          </componentProperties>
+        </element>
+        <element>
+          <name>AdSettingsVP</name>
+          <uniqueID>Element:7b5865c1</uniqueID>
+          <class>image</class>
+          <source title="AdChoices (external link)">https://i.l.inmobicdn.net/studio/asset/203d851c-594f-4c96-b7c4-3de5e92e1d57.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>325</tx>
+              <ty>468</ty>
+              <width>72</width>
+              <height>12</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+        </element>
+        <element>
+          <name>DAAIconVP</name>
+          <uniqueID>Element:c19e5af7</uniqueID>
+          <class>image</class>
+          <source title="AdChoiceIcon (external link)">https://i.l.inmobicdn.net/studio/asset/8fbe42ad-89a1-4214-8dcf-43b1cab6925b.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>307</tx>
+              <ty>469</ty>
+              <width>10</width>
+              <height>10</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+        </element>
+        <element>
+          <name>DAAhotspotVP</name>
+          <uniqueID>Element:f1a97887</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>288</tx>
+              <ty>457</ty>
+              <width>34</width>
+              <height>27</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>order</name>
+                  <value type="number">1</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="number">251</value>
+                </parameter>
+                <parameter>
+                  <name>delay</name>
+                  <value type="number">0</value>
+                </parameter>
+                <parameter>
+                  <name>easing</name>
+                  <value type="string">out</value>
+                </parameter>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>easingType</name>
+                  <value type="string">sine</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettingsVP</value>
+                </parameter>
+                <parameter>
+                  <name>duration</name>
+                  <value type="number">300</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">x</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettingHotspotVP</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>adChoicesVHS1:adChoicesVHS1;</customCss>
+        </element>
+        <element>
+          <name>AdSettingHotspotVP</name>
+          <uniqueID>Element:275c601b</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>242</tx>
+              <ty>462</ty>
+              <width>78</width>
+              <height>22</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="false" id="gotoURL" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>targetWindow</name>
+                  <value type="string">_blank</value>
+                </parameter>
+                <parameter>
+                  <name>label</name>
+                  <value type="string">optOutUrl</value>
+                </parameter>
+                <parameter>
+                  <name>gotoURLVia</name>
+                  <value type="string">url</value>
+                </parameter>
+                <parameter>
+                  <name>url</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="callJavaScript" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>code</name>
+                  <value type="string">var optOutUrl = "{xvar:optOutUrl}";
+mraid.open(optOutUrl);</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>adChoicesVHS2:adChoicesVHS2;</customCss>
+        </element>
+        <element>
+          <name>skip1</name>
+          <uniqueID>Text:1306cb5f</uniqueID>
+          <class>text</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>2</tx>
+              <ty>7</ty>
+              <width>61</width>
+              <height>18</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">stop</value>
+                </parameter>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">videoelement1</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">sp:_NEXTPAGE</value>
+                </parameter>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>text-shadow: 1px 1px #000000</customCss>
+          <text scroll="off" selectable="false">
+            <entry lang="en-us">&lt;P _LH="13.95" ALIGN="LEFT"&gt;&lt;FONT FACE="HelveticaNeue" SIZE="12" COLOR="#FFFFFF" LETTERSPACING="0" KERNING="1"&gt;&lt;U&gt;SKIP&lt;/U&gt;&lt;/FONT&gt;&lt;/P&gt;</entry>
+          </text>
+        </element>
+        <element>
+          <name>SkipAdCn</name>
+          <uniqueID>Text:b4b31aa1</uniqueID>
+          <class>text</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>4</tx>
+              <ty>7</ty>
+              <width>98</width>
+              <height>29</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <text scroll="off">
+            <entry lang="en-us">&lt;P _LH="13.95" ALIGN="LEFT"&gt;&lt;FONT FACE="HelveticaNeue" SIZE="12" COLOR="#000000" LETTERSPACING="0" KERNING="1"&gt;&amp;amp;#10005&lt;/FONT&gt;&lt;/P&gt;</entry>
+          </text>
+        </element>
+        <element>
+          <name>skip1</name>
+          <uniqueID>Element:a8b171e9</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>-8</tx>
+              <ty>1</ty>
+              <width>117</width>
+              <height>31</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">stop</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">skip</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">Page:2f5eb993</value>
+                </parameter>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mouseClick">
+              <conditions actionCount="2" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="string">{xvar:autoCloseAd}</variable>
+                  <operator>eq</operator>
+                  <value>true</value>
+                </condition>
+                <condition>
+                  <variable type="string">{xvar:closeDuration}</variable>
+                  <operator>gt</operator>
+                  <value>0</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="controlTimer" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">closeadTimer</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">start</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>skipHS:skipHS;</customCss>
+        </element>
+        <element>
+          <name>replayCounter</name>
+          <uniqueID>Element:5f5b6a6b</uniqueID>
+          <class>image</class>
+          <source/>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>-20</ty>
+              <width>5</width>
+              <height>5</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+        </element>
+        <element>
+          <name>SkipAdCnX</name>
+          <uniqueID>Text:28df90c9</uniqueID>
+          <class>text</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>57</tx>
+              <ty>3</ty>
+              <width>85</width>
+              <height>30</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+          <text scroll="off">
+            <entry lang="en-us">&lt;P _LH="17.4" ALIGN="LEFT"&gt;&lt;FONT FACE="HelveticaNeue" SIZE="15" COLOR="#F9F9F9" LETTERSPACING="0" KERNING="1"&gt;&amp;amp;#10005&lt;/FONT&gt;&lt;/P&gt;</entry>
+          </text>
+        </element>
+        <element>
+          <name>skipCn</name>
+          <uniqueID>Element:ab780b11</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>-8</tx>
+              <ty>1</ty>
+              <width>139</width>
+              <height>31</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">stop</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">skip</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mouseClick">
+              <conditions actionCount="1" allRequired="false" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>eq</operator>
+                  <value>staticEndCardSkip</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>eq</operator>
+                  <value>staticEndCardNonSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">Page:2f5eb993</value>
+                </parameter>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mouseClick">
+              <conditions actionCount="1" allRequired="false" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>eq</operator>
+                  <value>preRollSkip</value>
+                </condition>
+                <condition>
+                  <variable type="externalvar">type</variable>
+                  <operator>eq</operator>
+                  <value>preRollNonSkip</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="closeSprout" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>closeAll</name>
+                  <value type="string">false</value>
+                </parameter>
+                <parameter>
+                  <name>sproutID</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="condition" trigger="mouseClick">
+              <conditions actionCount="2" allRequired="true" playActions="true" stopActions="false">
+                <condition>
+                  <variable type="string">{xvar:autoCloseAd}</variable>
+                  <operator>eq</operator>
+                  <value>true</value>
+                </condition>
+                <condition>
+                  <variable type="string">{xvar:closeDuration}</variable>
+                  <operator>gt</operator>
+                  <value>0</value>
+                </condition>
+              </conditions>
+            </action>
+            <action active="true" id="controlTimer" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">closeadTimer</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">start</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>skipCn:skipCn;</customCss>
+        </element>
+      </elements>
+      <appearance>
+        <backgroundColor>#ffffff</backgroundColor>
+        <backgroundColorTo>#cecece</backgroundColorTo>
+        <fillType>NONE</fillType>
+        <borderWidth>0</borderWidth>
+        <opacity>1</opacity>
+      </appearance>
+      <actions>
+        <action active="false" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">video</value>
+            </parameter>
+            <parameter>
+              <name>value</name>
+              <value type="string">{xvar:video_url}</value>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">source</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="false" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">endcard</value>
+            </parameter>
+            <parameter>
+              <name>value</name>
+              <value type="string">{xvar:endCardImage}</value>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">source</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="true" id="setVariable" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>value</name>
+              <value type="string">{xvar:brandName|upperCase}</value>
+            </parameter>
+            <parameter>
+              <name>varName</name>
+              <value type="string">brandname</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="true" id="setVariable" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>value</name>
+              <value type="string">{xvar:skipText|upperCase}</value>
+            </parameter>
+            <parameter>
+              <name>varName</name>
+              <value type="string">skipText</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="true" id="setVariable" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>value</name>
+              <value type="string">{xvar:ctaText|upperCase}</value>
+            </parameter>
+            <parameter>
+              <name>varName</name>
+              <value type="string">ctatext</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="false" id="setVariable" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>value</name>
+              <value type="string">{videoelement1.remainingseconds|numberFormat=,.0}</value>
+            </parameter>
+            <parameter>
+              <name>varName</name>
+              <value type="string">timer</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="true" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">closeadTimer</value>
+            </parameter>
+            <parameter>
+              <name>value</name>
+              <value type="string">{xvar:closeDuration}</value>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">evaluate</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">duration</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="false" id="condition" trigger="pageShow">
+          <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+            <condition>
+              <variable type="externalvar">showAdChoices</variable>
+              <operator>eq</operator>
+              <value>true</value>
+            </condition>
+            <condition>
+              <variable type="externalvar">type</variable>
+              <operator>eq</operator>
+              <value>preRollSkip</value>
+            </condition>
+          </conditions>
+        </action>
+        <action active="false" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">DAAIconVP, DAAhotspotVP</value>
+            </parameter>
+            <parameter>
+              <name>value</name>
+              <value type="boolean">true</value>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">visibility</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="false" id="condition" trigger="pageShow">
+          <conditions actionCount="1" allRequired="true" playActions="true" stopActions="false">
+            <condition>
+              <variable type="externalvar">showAdChoices</variable>
+              <operator>eq</operator>
+              <value>true</value>
+            </condition>
+            <condition>
+              <variable type="externalvar">type</variable>
+              <operator>eq</operator>
+              <value>preRollNonSkip</value>
+            </condition>
+          </conditions>
+        </action>
+        <action active="false" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">DAAIconVP, DAAhotspotVP</value>
+            </parameter>
+            <parameter>
+              <name>value</name>
+              <value type="boolean">true</value>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">visibility</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="true" id="condition" trigger="pageShow">
+          <conditions actionCount="1" allRequired="true" playActions="false" stopActions="false">
+            <condition>
+              <variable type="elementProperty">replayCounter.x</variable>
+              <operator>eq</operator>
+              <value>0</value>
+            </condition>
+          </conditions>
+        </action>
+        <action active="true" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">SkipAdCn</value>
+            </parameter>
+            <parameter>
+              <name>value</name>
+              <value type="string">&lt;span style='font-family: Helvetica, Arial, Roboto, "Droid Sans Fallback", sans-serif;font-size: 12px;text-decoration: underline; color: #FFF;'&gt;跳过 广告&lt;/span&gt;</value>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">text</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="true" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">SkipAdCnX</value>
+            </parameter>
+            <parameter>
+              <name>value</name>
+              <value type="string">&lt;span style='font-family: Helvetica, Arial, Roboto, "Droid Sans Fallback", sans-serif;font-size: 15px;font-weight: bold;  color: #FFF;'&gt; &amp;#10005;&lt;/span&gt;</value>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">text</value>
+            </parameter>
+          </parameters>
+        </action>
+      </actions>
+    </Page>
+    <Page>
+      <uniqueID>Page:2f5eb993</uniqueID>
+      <created>2015-12-03T09:22:20</created>
+      <lastModified>2015-12-03T09:22:20</lastModified>
+      <name>endcard</name>
+      <elements>
+        <element>
+          <name>closeadTimer</name>
+          <uniqueID>Element:3b1de7fd</uniqueID>
+          <class>component</class>
+          <source version="2">com.sproutbuilder.components.timer.TimerComponent</source>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>-156</tx>
+              <ty>158</ty>
+              <width>30</width>
+              <height>30</height>
+              <minimumWidth>15</minimumWidth>
+              <minimumHeight>15</minimumHeight>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>SOLID</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>1</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="reportEventTracking" trigger="timerComplete">
+              <parameters>
+                <parameter>
+                  <name>action</name>
+                  <value type="string">autoClosed</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>category</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>label</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="closeSprout" trigger="timerComplete">
+              <parameters>
+                <parameter>
+                  <name>closeAll</name>
+                  <value type="string">false</value>
+                </parameter>
+                <parameter>
+                  <name>sproutID</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <componentProperties>
+            <property name="duration" value="0"/>
+            <property name="autorun" value="never"/>
+            <property name="action" value=""/>
+            <property name="repeat" value="1"/>
+            <property name="showborder" value="true"/>
+            <property name="bgcolor" value="0xffffff"/>
+            <property name="fgcolor" value="0x797979"/>
+          </componentProperties>
+        </element>
+      </elements>
+      <appearance>
+        <backgroundColor>#ffffff</backgroundColor>
+        <backgroundColorTo>#cecece</backgroundColorTo>
+        <fillType>NONE</fillType>
+        <borderWidth>0</borderWidth>
+        <opacity>1</opacity>
+      </appearance>
+      <actions>
+        <action active="true" id="condition" trigger="pageShow">
+          <conditions actionCount="1" allRequired="true" playActions="true" stopActions="true">
+            <condition>
+              <variable type="externalvar">showAdChoices</variable>
+              <operator>eq</operator>
+              <value>true</value>
+            </condition>
+            <condition>
+              <variable type="externalvar">type</variable>
+              <operator>eq</operator>
+              <value>staticEndCardSkip</value>
+            </condition>
+          </conditions>
+        </action>
+        <action active="true" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>value</name>
+              <value type="boolean">true</value>
+            </parameter>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">DAAIcon, DAAhotspot</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">visibility</value>
+            </parameter>
+          </parameters>
+        </action>
+        <action active="true" id="condition" trigger="pageShow">
+          <conditions actionCount="1" allRequired="true" playActions="true" stopActions="true">
+            <condition>
+              <variable type="externalvar">showAdChoices</variable>
+              <operator>eq</operator>
+              <value>true</value>
+            </condition>
+            <condition>
+              <variable type="externalvar">type</variable>
+              <operator>eq</operator>
+              <value>staticEndCardNonSkip</value>
+            </condition>
+          </conditions>
+        </action>
+        <action active="true" id="setProperty" trigger="pageShow">
+          <parameters>
+            <parameter>
+              <name>value</name>
+              <value type="boolean">true</value>
+            </parameter>
+            <parameter>
+              <name>limit</name>
+              <value type="number"/>
+            </parameter>
+            <parameter>
+              <name>behavior</name>
+              <value type="string">set</value>
+            </parameter>
+            <parameter>
+              <name>targetElement</name>
+              <value type="string">DAAIcon, DAAhotspot</value>
+            </parameter>
+            <parameter>
+              <name>property</name>
+              <value type="string">visibility</value>
+            </parameter>
+          </parameters>
+        </action>
+      </actions>
+    </Page>
+  </pages>
+  <masterPages>
+    <backgroundPage>
+      <uniqueID>Page2</uniqueID>
+      <created>2015-12-03T09:08:36Z</created>
+      <lastModified>2015-12-03T09:08:36Z</lastModified>
+      <name>Master Background</name>
+      <appearance>
+        <backgroundColor>#ffffff</backgroundColor>
+        <backgroundColorTo>#cecece</backgroundColorTo>
+        <fillType>SOLID</fillType>
+        <borderWidth>0</borderWidth>
+        <opacity>1</opacity>
+      </appearance>
+    </backgroundPage>
+    <foregroundPage>
+      <uniqueID>Page3</uniqueID>
+      <created>2015-12-03T09:08:36Z</created>
+      <lastModified>2015-12-03T09:08:36Z</lastModified>
+      <name>Master Foreground</name>
+      <elements>
+        <element>
+          <name>endcard</name>
+          <uniqueID>Element:58d58f79</uniqueID>
+          <class>image</class>
+          <source title="Variable {xvar:endCardImage}">{xvar:endCardImage}</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>0</ty>
+              <width>320</width>
+              <height>480</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+        </element>
+        <element>
+          <name>cta2</name>
+          <uniqueID>Element:d1bcdf91</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>0</ty>
+              <width>320</width>
+              <height>480</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="false" id="gotoURL" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>label</name>
+                  <value type="string">click</value>
+                </parameter>
+                <parameter>
+                  <name>gotoURLVia</name>
+                  <value type="string">clickMacro</value>
+                </parameter>
+                <parameter>
+                  <name>targetWindow</name>
+                  <value type="string">_top</value>
+                </parameter>
+                <parameter>
+                  <name>url</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">sp:_NEXTPAGE</value>
+                </parameter>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">videoelement1</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">pause</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="gotoURL" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>label</name>
+                  <value type="string">click</value>
+                </parameter>
+                <parameter>
+                  <name>gotoURLVia</name>
+                  <value type="string">clickMacro</value>
+                </parameter>
+                <parameter>
+                  <name>targetWindow</name>
+                  <value type="string">_blank</value>
+                </parameter>
+                <parameter>
+                  <name>url</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="callJavaScript" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>code</name>
+                  <value type="string">mraid.close();</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>endcardCTA:endcardCTA;</customCss>
+        </element>
+        <element>
+          <name>replay</name>
+          <uniqueID>Element:e83edc07</uniqueID>
+          <class>image</class>
+          <source title="a3683139-ed8b-4aed-919a-48936a45e309">https://studio.inmobicdn.net/asset/13b32147-9ed1-4bea-b69a-7e4a654443e9.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>10</tx>
+              <ty>430</ty>
+              <width>39</width>
+              <height>39</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">replayCounter</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="number">10</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">x</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="reportEventTracking" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>category</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>action</name>
+                  <value type="string">Video Replayed - EndCard</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>label</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">unmute</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="controlMedia" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">video</value>
+                </parameter>
+                <parameter>
+                  <name>position</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">play</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">cta, ctaText, leftClose, skip</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setVariable" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>value</name>
+                  <value type="string">true</value>
+                </parameter>
+                <parameter>
+                  <name>varName</name>
+                  <value type="string">replay</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettingHotspot, AdSettingHotspotVP, skip1, skipCn, SkipAdCn, SkipAdCnX</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">false</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettings, AdSettingsVP</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="number">326</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">x</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="gotoPage" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>currentPage</name>
+                  <value type="string">Page1</value>
+                </parameter>
+                <parameter>
+                  <name>targetPage</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="controlTimer" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>elementNameOrID</name>
+                  <value type="string">closeadTimer</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">stop</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="false" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">SkipAdCn</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="string">&lt;span style='font-family: Helvetica, Arial, Roboto, "Droid Sans Fallback", sans-serif;font-size: 12px;text-decoration: underline; color: #FFF;'&gt;跳过 广告&lt;/span&gt;&lt;span style='font-family: Helvetica, Arial, Roboto, "Droid Sans Fallback", sans-serif;font-size: 12px; text-decoration: none; color: #FFF;'&gt; &amp;#10005;&lt;/span&gt;</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">text</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>replayHS:replayHS;</customCss>
+        </element>
+        <element>
+          <uniqueID>Element:2088631</uniqueID>
+          <class>image</class>
+          <source title="Add Assets">https://studio.inmobicdn.net/asset/a3b3426b-21c5-4d5a-b39a-c5cb9cdfa1fb.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>0</tx>
+              <ty>0</ty>
+              <width>30</width>
+              <height>30</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="closeSprout" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>sproutID</name>
+                  <value type="string"/>
+                </parameter>
+                <parameter>
+                  <name>closeAll</name>
+                  <value type="string">false</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>endcardCloseHS:endcardCloseHS;</customCss>
+        </element>
+        <element>
+          <name>AdSettings</name>
+          <uniqueID>Element:8f928f0d</uniqueID>
+          <class>image</class>
+          <source title="AdChoices (external link)">https://i.l.inmobicdn.net/studio/asset/ce64d6c1-42ed-4675-93db-3536fa043e62.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>325</tx>
+              <ty>468</ty>
+              <width>72</width>
+              <height>12</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>true</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+        </element>
+        <element>
+          <name>DAAIcon</name>
+          <uniqueID>Element:d8ae2cf5</uniqueID>
+          <class>image</class>
+          <source title="AdChoiceIcon (external link)">https://i.l.inmobicdn.net/studio/asset/8fbe42ad-89a1-4214-8dcf-43b1cab6925b.png</source>
+          <scalingMode>stretch</scalingMode>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>307</tx>
+              <ty>469</ty>
+              <width>10</width>
+              <height>10</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>solid</borderStyle>
+            <capsStyle>square</capsStyle>
+          </appearance>
+        </element>
+        <element>
+          <name>DAAhotspot</name>
+          <uniqueID>Element:3b13b2ef</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>288</tx>
+              <ty>455</ty>
+              <width>34</width>
+              <height>29</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>order</name>
+                  <value type="number">1</value>
+                </parameter>
+                <parameter>
+                  <name>value</name>
+                  <value type="number">251</value>
+                </parameter>
+                <parameter>
+                  <name>delay</name>
+                  <value type="number">0</value>
+                </parameter>
+                <parameter>
+                  <name>easing</name>
+                  <value type="string">out</value>
+                </parameter>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>easingType</name>
+                  <value type="string">sine</value>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettings</value>
+                </parameter>
+                <parameter>
+                  <name>duration</name>
+                  <value type="number">300</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">x</value>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="setProperty" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>value</name>
+                  <value type="boolean">true</value>
+                </parameter>
+                <parameter>
+                  <name>limit</name>
+                  <value type="number"/>
+                </parameter>
+                <parameter>
+                  <name>behavior</name>
+                  <value type="string">set</value>
+                </parameter>
+                <parameter>
+                  <name>targetElement</name>
+                  <value type="string">AdSettingHotspot</value>
+                </parameter>
+                <parameter>
+                  <name>property</name>
+                  <value type="string">visibility</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>adChoicesEHS1:adChoicesEHS1;</customCss>
+        </element>
+        <element>
+          <name>AdSettingHotspot</name>
+          <uniqueID>Element:c83cf2fd</uniqueID>
+          <class>rectangle</class>
+          <source/>
+          <positioning>
+            <transform>
+              <a>1</a>
+              <b>0</b>
+              <c>0</c>
+              <d>1</d>
+              <tx>235</tx>
+              <ty>457</ty>
+              <width>85</width>
+              <height>27</height>
+            </transform>
+          </positioning>
+          <appearance>
+            <color>#000000</color>
+            <backgroundColor>#ffffff</backgroundColor>
+            <backgroundColorTo>#cecece</backgroundColorTo>
+            <fillType>NONE</fillType>
+            <opacity>1</opacity>
+            <visibility>false</visibility>
+            <borderWidth>0</borderWidth>
+            <borderStyle>none</borderStyle>
+            <capsStyle>square</capsStyle>
+            <effects version="1.7"/>
+          </appearance>
+          <actions>
+            <action active="false" id="gotoURL" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>targetWindow</name>
+                  <value type="string">_blank</value>
+                </parameter>
+                <parameter>
+                  <name>label</name>
+                  <value type="string">optOutUrl</value>
+                </parameter>
+                <parameter>
+                  <name>gotoURLVia</name>
+                  <value type="string">url</value>
+                </parameter>
+                <parameter>
+                  <name>url</name>
+                  <value type="string"/>
+                </parameter>
+              </parameters>
+            </action>
+            <action active="true" id="callJavaScript" trigger="mouseClick">
+              <parameters>
+                <parameter>
+                  <name>code</name>
+                  <value type="string">var optOutUrl = "{xvar:optOutUrl}";
+mraid.open(optOutUrl);</value>
+                </parameter>
+              </parameters>
+            </action>
+          </actions>
+          <customCss>adChoicesEHS2:adChoicesEHS2;</customCss>
+        </element>
+      </elements>
+      <appearance>
+        <backgroundColor>transparent</backgroundColor>
+        <backgroundColorTo>#cecece</backgroundColorTo>
+        <fillType>SOLID</fillType>
+        <borderWidth>0</borderWidth>
+        <opacity>1</opacity>
+      </appearance>
+    </foregroundPage>
+  </masterPages>
+  <assets>
+    <asset id="HelveticaNeue" type="font"/>
+  </assets>
+  <tokens/>
+  <appearance/>
+</Application>

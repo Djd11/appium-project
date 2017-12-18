@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Video20"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="137.048">
+  <properties />
+  
+  
+            <testcase name="Test_Video20Elements" time="113.895" classname="TemplateResponseTypeTestRelated.NativeVideoReponseTest" />
+                <testcase name="Test_Video20Elements" time="23.153" classname="TemplateResponseTypeTestRelated.NativeVideoReponseTest" />
+      
+</testsuite>
